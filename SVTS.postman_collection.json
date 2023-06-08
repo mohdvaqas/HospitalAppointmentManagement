@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "6708019e-5ff1-4808-860b-bdd00939bb03",
+		"name": "SVTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4749777"
+	},
+	"item": [
+		{
+			"name": "Register Patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Mohammad Vaqas\",\n    \"email\": \"mohd.vaqas@gmail.com\",\n    \"age\": 18,\n    \"gender\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/proxy-patient/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"proxy-patient",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"patientId\": 1,\n    \"appointmentDateTime\": \"2023-06-09 12:12:12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/proxy-appointment/appointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"proxy-appointment",
+						"appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Appointment",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"appointmentId\": 1,\n    \"patientId\": 1,\n    \"status\": 2,\n    \"reason\": \"NNNVaqas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/proxy-appointment/appointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"proxy-appointment",
+						"appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"patientId\": 17,\n    \"appointmentDateTime\": \"2023-06-09 12:12:12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/proxy-appointment/appointmentRemove?appointmentId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"proxy-appointment",
+						"appointmentRemove"
+					],
+					"query": [
+						{
+							"key": "appointmentId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Active Appointment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"patientId\": 17,\n    \"appointmentDateTime\": \"2023-06-09 12:12:12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/proxy-patient/getAllActiveAppointments/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"proxy-patient",
+						"getAllActiveAppointments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Patient Appointment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"patientId\": 17,\n    \"appointmentDateTime\": \"2023-06-09 12:12:12\",\n    \"status\": 2,\n    \"dateFrom\":\"2023-06-08\",\n    \"dateTo\":\"2023-06-09\",\n    \"name\":\"Vaqas\",\n    \"pageNumber\": 0,\n    \"pageSize\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/proxy-appointment/getAllAppointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"proxy-appointment",
+						"getAllAppointments"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "dateFrom",
+							"value": "2023-06-01",
+							"disabled": true
+						},
+						{
+							"key": "dateTo",
+							"value": "2023-06-06",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Vaqas",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
