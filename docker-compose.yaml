@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    networks:
+      - comment
+
+  appointment-database:
+    container_name: appointment-database
+    image: postgres:15.2
+    ports:
+      - "5437:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: appointment
+    networks:
+      - comment
+
+networks:
+  comment:
+    driver: bridge
