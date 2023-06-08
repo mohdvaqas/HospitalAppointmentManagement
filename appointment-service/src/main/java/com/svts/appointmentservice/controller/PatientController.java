@@ -21,7 +21,7 @@ public class PatientController {
     public PatientController(PatientService patientService) {
         this.patientService = patientService;
     }
-    @GetMapping(path = "/getAllActiveAppointments/{patientId}")
+    @GetMapping(path = "/appointment/{patientId}")
     public ResponseEntity<PatientAppointmentDTO> getActivePatientAppointmentList(@PathVariable int patientId){
        return new ResponseEntity<>(patientService.getActivePatientAppointmentList(patientId), HttpStatus.OK);
     }

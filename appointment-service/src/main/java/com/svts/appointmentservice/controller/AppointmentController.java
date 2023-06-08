@@ -25,22 +25,22 @@ public class AppointmentController {
 
     }
 
-    @PostMapping("/appointment")
+    @PostMapping("/create")
     public ResponseEntity<AppointmentDTO> createAppointment(@RequestBody @Valid CreateUpdateAppointmentVM createUpdateAppointmentVM) {
        return new ResponseEntity<>(appointmentService.createAppointment(createUpdateAppointmentVM), HttpStatus.OK);
     }
 
-    @PatchMapping("/appointment")
+    @PatchMapping("/update")
     public ResponseEntity<AppointmentDTO> updateAppointment(@RequestBody @Valid CreateUpdateAppointmentVM createUpdateAppointmentVM) {
         return new ResponseEntity<>(appointmentService.updateAppointment(createUpdateAppointmentVM), HttpStatus.OK);
     }
 
-    @DeleteMapping("/appointmentRemove")
+    @DeleteMapping("/remove")
     public boolean appointmentRemove(@RequestParam(name = "appointmentId") Long appointmentId){
         return appointmentService.appointmentRemove(appointmentId);
     }
 
-    @GetMapping(path = "/getAllAppointments")
+    @GetMapping(path = "/search")
     public ResponseEntity<List<AppointmentDTO>> getAllAppointments(@RequestBody @Valid SearchAppointmentVM searchAppointmentVM){
         return new ResponseEntity<>(appointmentService.getAllAppointments(searchAppointmentVM), HttpStatus.OK);
     }
