@@ -2,13 +2,13 @@
 ![](https://user-images.githubusercontent.com/31319842/101862601-e6ea8c00-3b9c-11eb-8843-4bf612f97931.png)
 
 ## Overview
-The architecture is composed by five services:
+The architecture is composed by three services:
 
 * [`api-getway`](https://github.com/mohdvaqas/HospitalAppointmentManagement/tree/main/api-gateway): Dockerizing **API Gateway Service** using docker and docker-compose.
 
 * [`eureka-server`](https://github.com/mohdvaqas/HospitalAppointmentManagement/tree/main/eureka-server): Dockerizing **Eureka Service** using docker and docker-compose.
 
-* [`appointment-service`](https://github.com/mohdvaqas/HospitalAppointmentManagement/tree/main/appointment-service): Dockerizing **Sales  Service** using docker and docker-compose application connection with two deferent database  **local** **database** and **docker database**
+* [`appointment-service`](https://github.com/mohdvaqas/HospitalAppointmentManagement/tree/main/appointment-service): Dockerizing **Appointment Service** using docker and docker-compose application connection with two deferent database  **local** **database** and **docker database**
 
 ##### [`docker-compose`](https://github.com/ahsumon85/dockerized-spring-boot-microservice#deployment-on-docker-compose): Dockerizing microservice using docker-compose application connect with local database
 
