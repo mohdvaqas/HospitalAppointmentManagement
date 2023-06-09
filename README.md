@@ -39,8 +39,8 @@ $ mvn clean install
 
 ```
 $ java -jar eureka-service/target/eureka.jar 
-$ java -jar api-gateway/target/gateway.jar 
-$ java -jar appointment-service/target/appointment.jar
+$ java -jar api-gateway/target/api-gateway.jar 
+$ java -jar appointment-service/target/appointment-service.jar
 ```
 
 **Next, we containerize this application by adding a `Dockerfile`:**
@@ -169,3 +169,17 @@ Search Service is multi funcaionality service it is validing the object in the V
 created the paginated dynamic query process.
 
 I wanted to implement the OAuth integration for Admin login on the home, the home page will display the last records of today 
+
+
+## Steps to run the application
+1. cd HospitalAppointmentManagement
+2. Execute mvn clean install or docker build .
+3. 
+```
+$ java -jar eureka-service/target/eureka.jar
+$ java -jar api-gateway/target/api-gateway.jar
+$ java -jar appointment-service/target/appointment-service.jar
+```
+3. docker-compose up -d (this will start the database container)
+4. Import the postman collection on postman
+5. The open API documentation will be running at http://localhost:1069/swagger-ui/index.html#
