@@ -10,7 +10,7 @@ The architecture is composed by three services:
 
 * [`appointment-service`](https://github.com/mohdvaqas/HospitalAppointmentManagement/tree/main/appointment-service): Dockerizing **Appointment Service** using docker and docker-compose application connection with two deferent database  **local** **database** and **docker database**
 
-##### [`docker-compose`](https://github.com/ahsumon85/dockerized-spring-boot-microservice#deployment-on-docker-compose): Dockerizing microservice using docker-compose application connect with local database
+##### [`docker-compose`](https://github.com/mohdvaqas/HospitalAppointmentManagement/blob/main/docker-compose.yaml): Dockerizing microservice using docker-compose application connect with local database
 
 ### Tools you will need
 * Maven 3.0+ is your build tool
