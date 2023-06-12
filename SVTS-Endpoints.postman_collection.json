@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "6708019e-5ff1-4808-860b-bdd00939bb03",
-		"name": "SVTS",
+		"_postman_id": "6c08903a-3da4-46ca-a0bd-8d759e3b96a6",
+		"name": "SVTS-Endpoints",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "4749777"
 	},
@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"patientId\": 1,\n    \"appointmentDateTime\": \"2023-06-09 12:12:12\"\n}",
+					"raw": "{\n    \"patientId\": 1,\n    \"appointmentDateTime\": \"2023-06-13 12:12:12\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -50,7 +50,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9999/proxy-appointment/appointment",
+					"raw": "http://localhost:9999/proxy-appointment/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,7 +58,7 @@
 					"port": "9999",
 					"path": [
 						"proxy-appointment",
-						"appointment"
+						"create"
 					]
 				}
 			},
@@ -79,7 +79,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9999/proxy-appointment/appointment",
+					"raw": "http://localhost:9999/proxy-appointment/update",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -87,7 +87,7 @@
 					"port": "9999",
 					"path": [
 						"proxy-appointment",
-						"appointment"
+						"update"
 					]
 				}
 			},
@@ -108,7 +108,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9999/proxy-appointment/appointmentRemove?appointmentId=2",
+					"raw": "http://localhost:9999/proxy-appointment/remove?appointmentId=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -116,12 +116,12 @@
 					"port": "9999",
 					"path": [
 						"proxy-appointment",
-						"appointmentRemove"
+						"remove"
 					],
 					"query": [
 						{
 							"key": "appointmentId",
-							"value": "2"
+							"value": "1"
 						}
 					]
 				}
@@ -146,7 +146,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9999/proxy-patient/getAllActiveAppointments/1",
+					"raw": "http://localhost:9999/proxy-patient/appointment/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -154,7 +154,7 @@
 					"port": "9999",
 					"path": [
 						"proxy-patient",
-						"getAllActiveAppointments",
+						"appointment",
 						"1"
 					]
 				}
@@ -179,7 +179,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9999/proxy-appointment/getAllAppointments",
+					"raw": "http://localhost:9999/proxy-appointment/search?status=1&dateFrom=2023-06-01&dateTo=2023-06-06&name=Vaqas",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -187,28 +187,24 @@
 					"port": "9999",
 					"path": [
 						"proxy-appointment",
-						"getAllAppointments"
+						"search"
 					],
 					"query": [
 						{
 							"key": "status",
-							"value": "1",
-							"disabled": true
+							"value": "1"
 						},
 						{
 							"key": "dateFrom",
-							"value": "2023-06-01",
-							"disabled": true
+							"value": "2023-06-01"
 						},
 						{
 							"key": "dateTo",
-							"value": "2023-06-06",
-							"disabled": true
+							"value": "2023-06-06"
 						},
 						{
 							"key": "name",
-							"value": "Vaqas",
-							"disabled": true
+							"value": "Vaqas"
 						}
 					]
 				}
