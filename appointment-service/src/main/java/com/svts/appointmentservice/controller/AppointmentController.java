@@ -10,7 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/appointment")
@@ -36,8 +38,11 @@ public class AppointmentController {
     }
 
     @DeleteMapping("/remove")
-    public boolean appointmentRemove(@RequestParam(name = "appointmentId") Long appointmentId){
-        return appointmentService.appointmentRemove(appointmentId);
+    public ResponseEntity<Map<String, Boolean>> appointmentRemove(@RequestParam(name = "appointmentId") Long appointmentId){
+        Map<String, Boolean> appointmentPayload = new HashMap<>();
+        boolean appointment = appointmentService.appointmentRemove(appointmentId);
+        appointmentPayload.put("deleted", appointment);
+        return new ResponseEntity<>(appointmentPayload, HttpStatus.OK);
     }
 
     @GetMapping(path = "/search")

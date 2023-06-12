@@ -13,6 +13,6 @@ public class PatientAppointmentDTO {
     private Long identityNumber;
     private String name;
     private String email;
-    private List<AppointmentDTO> appointmentResponse;
+    private List<AppointmentDTO> appointments;
     private Date createdDate;
 }

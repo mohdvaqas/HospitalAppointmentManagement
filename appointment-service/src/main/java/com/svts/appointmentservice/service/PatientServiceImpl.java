@@ -76,7 +76,7 @@ public class PatientServiceImpl implements PatientService {
             appointmentDTOList.add(appointmentDTO);
         }
 
-        patientAppointmentDTO.setAppointmentResponse(appointmentDTOList);
+        patientAppointmentDTO.setAppointments(appointmentDTOList);
         return patientAppointmentDTO;
     }
 }
